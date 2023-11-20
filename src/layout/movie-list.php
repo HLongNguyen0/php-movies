@@ -1,9 +1,13 @@
 <?php
+
 switch($_SESSION["movieList"]) {
     case "popular":
         require "php/api/api-popular.php";
         break;
-        default:
+    case "search":
+        require "php/api/api-search.php";
+        break;
+    default:
         require "php/api/api-popular.php";
 }
 

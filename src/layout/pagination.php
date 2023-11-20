@@ -4,11 +4,19 @@
             <?php
             if($_SESSION["page"] < 5) {
                 for ($i = 1; $i <= 7; $i++) {
-                    echo "
-                    <li class='pagination__elem'>
+                    if ($_SESSION["page"] == $i) {
+                        echo "
+                        <li class='pagination__elem'>
+                            <button class='pagination__button pagination__button-curr' type='submit' name='pagination' value=" . $i .">" . $i . "</button>
+                        </li>
+                        ";
+                    } else {
+                        echo "
+                        <li class='pagination__elem'>
                         <button class='pagination__button' type='submit' name='pagination' value=" . $i .">" . $i . "</button>
-                    </li>
-                    ";
+                        </li>
+                        ";
+                    }
                 }
             } else {
                 echo "

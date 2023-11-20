@@ -3,8 +3,13 @@
 require "php/session.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["pagination"])) $_SESSION["page"] = $_POST["pagination"];
+    if (isset($_POST["search"])) {
+        $_SESSION["search"] = $_POST["search"];
+        $_SESSION["movieList"] = "search";
+    }
     if (isset($_POST["movieList"])) $_SESSION["movieList"] = $_POST["movieList"];
+    $_SESSION["page"] = 1;
+    if (isset($_POST["pagination"])) $_SESSION["page"] = $_POST["pagination"];
 }
 
 ?>
