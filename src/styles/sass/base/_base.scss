@@ -2,8 +2,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: Roboto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background-color: transparent;
 }
 
 ol, ul {
     list-style: none;
+}
+
+input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
 }

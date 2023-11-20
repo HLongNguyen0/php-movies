@@ -1,16 +1,13 @@
 <?php
-
 switch($_SESSION["movieList"]) {
     case "popular":
         require "php/api/api-popular.php";
         break;
-    default:
+        default:
         require "php/api/api-popular.php";
 }
 
 $data = json_decode($response->getBody())->results;
-
-var_dump($data[0]);
 
 ?>
 <section class="movies">
@@ -29,7 +26,6 @@ var_dump($data[0]);
                     </li>
                 ";
             }
-            var_dump($data[0]);
             ?> 
         </ul>
     </div>

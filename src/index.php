@@ -1,3 +1,14 @@
+<?php
+
+require "php/session.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["pagination"])) $_SESSION["page"] = $_POST["pagination"];
+    if (isset($_POST["movieList"])) $_SESSION["movieList"] = $_POST["movieList"];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +20,10 @@
 </head>
 <body>
     <?php
-    require "php/session.php";
-
+    
     require "layout/header.php";
     require "layout/main.php";
+    
     ?>
 </body>
 </html>
