@@ -1,3 +1,21 @@
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+}
+
+:root {
+  --main-orange: #FF6B01;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,12 +42,6 @@ input {
   outline: none;
   background-color: transparent;
   color: inherit;
-}
-
-.container {
-  width: 1200px;
-  margin: 0 auto;
-  padding: 20px 40px;
 }
 
 header {
@@ -82,7 +94,10 @@ main {
   height: 400px;
   margin: 16px 10px;
   overflow: hidden;
-  transition: transform 250ms ease-in;
+  transition: transform 250ms ease;
+  animation: fade linear both;
+  animation-timeline: view();
+  animation-range: entry 0 cover 25%;
 }
 .movies__card:hover {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -104,7 +119,36 @@ main {
   height: 400px;
   padding: 16px;
   background-color: #fff;
-  transition: transform 250ms ease-in;
+  transition: transform 250ms ease;
+}
+
+.sort {
+  height: 44px;
+}
+.sort__list {
+  display: flex;
+  justify-content: space-between;
+  width: 10% 5;
+}
+.sort__elem {
+  text-align: center;
+}
+.sort__elem :hover {
+  border: 2px solid #000;
+  transform: scale(105%);
+  cursor: pointer;
+}
+.sort__button {
+  width: 200px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background-color: var(--main-orange);
+  color: #fff;
+  font-size: 20px;
+  transition: transform 250ms ease, border 250ms ease;
+}
+.sort__button-curr {
+  color: #000;
 }
 
 .pagination {
@@ -114,12 +158,13 @@ main {
 .pagination__list {
   display: flex;
   justify-content: space-between;
-  transition: transform 250ms ease-in;
+  transition: transform 250ms ease;
 }
 .pagination__list :hover .pagination__button {
   border: none;
-  background-color: orange;
+  background-color: var(--main-orange);
   color: #fff;
+  transform: scale(1.2);
   cursor: pointer;
 }
 .pagination__button {
@@ -127,7 +172,31 @@ main {
   height: 40px;
   border: 2px solid #000;
   border-radius: 8px;
+  transition: transform 250ms ease, border 250ms ease, background-color 250ms ease;
 }
 .pagination__button-curr {
-  border: 2px solid orange;
+  border: 2px solid var(--main-orange);
+  color: var(--main-orange);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+.modal__window {
+  width: 800px;
+  height: 520px;
+  border-radius: 8px;
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.openModal {
+  display: block;
 }/*# sourceMappingURL=main.css.map */

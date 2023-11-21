@@ -4,8 +4,8 @@ require "php/session.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["search"])) {
-        $_SESSION["search"] = $_POST["search"];
         $_SESSION["movieList"] = "search";
+        $_SESSION["search"] = $_POST["search"];
     }
     if (isset($_POST["movieList"])) $_SESSION["movieList"] = $_POST["movieList"];
     $_SESSION["page"] = 1;
@@ -31,4 +31,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     ?>
 </body>
+<script src="./php/modal.js"></script>
 </html>

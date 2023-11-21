@@ -15,8 +15,11 @@ main {
         height: 400px;
         margin: 16px 10px;
         overflow: hidden;
-        transition: transform 250ms ease-in;
-
+        
+        transition: transform 250ms ease;
+        animation: fade linear both;
+        animation-timeline: view();
+        animation-range: entry 0 cover 25%;
 
         &:hover {
             box-shadow: 
@@ -47,9 +50,44 @@ main {
             padding: 16px;
             
             background-color: #fff;
-            transition: transform 250ms ease-in;
+            transition: transform 250ms ease;
         }
 
+    }
+}
+.sort {
+    height: 44px;
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        
+        width: 10%5;
+    }
+    &__elem {
+        text-align: center;
+
+        
+        :hover {
+            border: 2px solid #000;
+            transform: scale(105%);
+            cursor: pointer;
+        }
+    }
+    &__button {
+        width: 200px;
+        padding: 12px 16px;
+        border-radius: 8px;
+        
+        background-color: var(--main-orange);
+        color: #fff;
+        font-size: 20px;
+
+        transition: transform 250ms ease,
+                    border 250ms ease;
+
+        &-curr {
+            color: #000;
+        }
     }
 }
 .pagination {
@@ -60,12 +98,14 @@ main {
         display: flex;
         justify-content: space-between;
 
-        transition: transform 250ms ease-in;
+        transition: transform 250ms ease;
 
         :hover  .pagination__button{
             border: none;
-            background-color: orange;
+            background-color: var(--main-orange);
             color: #fff;
+
+            transform: scale(1.2);
 
             cursor: pointer;
         }
@@ -75,9 +115,38 @@ main {
         height: 40px;
         border: 2px solid #000;
         border-radius: 8px;
+
+        transition: transform 250ms ease,
+                    border 250ms ease,
+                    background-color 250ms ease;
+
         &-curr {
-            border: 2px solid orange;
+            border: 2px solid var(--main-orange);
+            color: var(--main-orange);
         }
     }
 
+}
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+
+    &__window {
+        width: 800px;
+        height: 520px;
+        border-radius: 8px;
+
+        background-color: #fff;
+
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+    }
+}
+.openModal {
+    display: block;
 }
