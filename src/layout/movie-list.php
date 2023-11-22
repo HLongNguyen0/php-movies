@@ -25,6 +25,8 @@ switch($_SESSION["movieList"]) {
 
 $data = json_decode($response->getBody())->results;
 $lastPage = json_decode($response->getBody())->total_pages;
+
+
 ?>
 <section class="movies">
     <?php
@@ -37,7 +39,7 @@ $lastPage = json_decode($response->getBody())->total_pages;
                     echo "
                     <li class='movies__card'>
                         <img class='movies__card__img' src='https://image.tmdb.org/t/p/w300" . $movie->poster_path . "' alt='movie image'>
-                        <div class='card__text'>
+                        <div class='card__text' data-id='$movie->id'>
                             <h2 class='card__name'>" . ($movie->original_title ?? $movie->original_name) . "</h2>
                             <span class='card__year'>" . ($movie->release_date ?? $movie->first_air_date) . "</span>
                             <span class='card__vote'>" . round($movie->vote_average, 1) . "/10 </span>

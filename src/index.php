@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Document</title>
 
     <link rel="stylesheet" href="./styles/css/main.css">
+
 </head>
 <body>
     <?php
@@ -32,4 +33,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ?>
 </body>
 <script src="./php/modal.js"></script>
+
 </html>
