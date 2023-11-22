@@ -40,23 +40,25 @@ main {
 
             width: 100%;
             height: 400px;
-
         }
         .card__text {
             display: flex;
             flex-direction: column;
-
+            justify-content: flex-end;
             height: 400px;
-            padding: 16px;
-            
-            background-color: #fff;
             transition: transform 250ms ease;
         }
-
+        .card__name {
+            padding: 16px;
+            border-radius: 8px 8px 0 0;
+            background-color: #fff;
+        }
     }
 }
 .sort {
-    height: 44px;
+    width: 1120px;
+    height: 80px;
+    margin: 0 auto;
     &__list {
         display: flex;
         justify-content: space-between;
@@ -135,8 +137,11 @@ main {
     z-index: 99;
 
     &__window {
+        display: flex;
+
         width: 800px;
         height: 520px;
+        padding: 40px;
         border-radius: 8px;
 
         background-color: #fff;
@@ -146,7 +151,32 @@ main {
         left: 50%;
         translate: -50% -50%;
     }
+    &__img {
+        margin-right: 40px;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+
+        overflow: auto;
+    }
+    &__title {
+        margin-bottom: 40px;
+        font-size: 36px;
+    }
+    &__text {
+        margin-bottom: 8px;
+        font-size: 16px;
+    }
+    &__value {
+        font-weight: bold;
+    }
 }
 .openModal {
     display: block;
+}
+.closeModal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }

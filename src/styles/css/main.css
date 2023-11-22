@@ -116,14 +116,20 @@ main {
 .movies__card .card__text {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   height: 400px;
-  padding: 16px;
-  background-color: #fff;
   transition: transform 250ms ease;
+}
+.movies__card .card__name {
+  padding: 16px;
+  border-radius: 8px 8px 0 0;
+  background-color: #fff;
 }
 
 .sort {
-  height: 44px;
+  width: 1120px;
+  height: 80px;
+  margin: 0 auto;
 }
 .sort__list {
   display: flex;
@@ -187,8 +193,10 @@ main {
   z-index: 99;
 }
 .modal__window {
+  display: flex;
   width: 800px;
   height: 520px;
+  padding: 40px;
   border-radius: 8px;
   background-color: #fff;
   position: fixed;
@@ -196,7 +204,32 @@ main {
   left: 50%;
   translate: -50% -50%;
 }
+.modal__img {
+  margin-right: 40px;
+}
+.modal__info {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.modal__title {
+  margin-bottom: 40px;
+  font-size: 36px;
+}
+.modal__text {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+.modal__value {
+  font-weight: bold;
+}
 
 .openModal {
   display: block;
+}
+
+.closeModal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }/*# sourceMappingURL=main.css.map */

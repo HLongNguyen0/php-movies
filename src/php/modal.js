@@ -17,7 +17,8 @@ function openModal(e) {
     r.setRequestHeader("Content-Type", "application/json");
     
     params = {
-        movieId: e.target.dataset.id
+        movieId: e.target.dataset.id,
+        movieList: e.currentTarget.dataset.list
     };
     r.onload = () => {
         refs.modalWindow.innerHTML = r.response;
