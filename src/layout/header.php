@@ -1,15 +1,18 @@
-<?php
-
-?> 
-
 <header>
     <div class="container">
         <a class="logo" href="/src/index.php">
-            <img class="logo__img" src="./img/netways.png" alt="logo">
+            <?php
+            if ($currPage == 'index') echo "<img class='logo__img' src='./img/netways.png' alt='logo'>";
+            else echo "<img class='logo__img' src='../img/netways.png' alt='logo'>";
+            ?>
             <span class="logo__text">Movie Lib</span>
         </a>
         
         <form class="header__search" method="POST" action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>">
+            <?php
+            if ($currPage == 'index') echo "<input class='header__search__input' type='text' name='search'>";
+            else echo "<input class='header__search__input' type='text' name='library'>";
+            ?>
             <input class="header__search__input" type="text" name="search">
             <button class="header__search__button">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 0 50 50" fill="#fff">
@@ -24,7 +27,7 @@
                     <a href="/src/index.php" class="header__nav__link">Home</a>
                 </li>
                 <li class="header__nav__elem">
-                    <a href="" class="header__nav__link">Library</a>
+                    <a href="/src/layout/library.php" class="header__nav__link">Library</a>
                 </li>
             </ul>
         </nav>

@@ -101,16 +101,6 @@ main {
         justify-content: space-between;
 
         transition: transform 250ms ease;
-
-        :hover  .pagination__button{
-            border: none;
-            background-color: var(--main-orange);
-            color: #fff;
-
-            transform: scale(1.2);
-
-            cursor: pointer;
-        }
     }
     &__button {
         width: 40px;
@@ -126,6 +116,15 @@ main {
             border: 2px solid var(--main-orange);
             color: var(--main-orange);
         }
+        &:hover {
+            border: none;
+            background-color: var(--main-orange);
+            color: #fff;
+
+            transform: scale(1.2);
+
+            cursor: pointer;
+        }
     }
 
 }
@@ -140,7 +139,7 @@ main {
         display: flex;
 
         width: 800px;
-        height: 520px;
+        max-height: 600px;
         padding: 40px;
         border-radius: 8px;
 
@@ -151,8 +150,38 @@ main {
         left: 50%;
         translate: -50% -50%;
     }
-    &__img {
+    &__status {
         margin-right: 40px;
+    }
+    &__img {
+        margin-bottom: 20px;
+    }
+    &__form {
+        display: flex;
+        justify-content: space-between;
+        width: 300px;
+        height: 40px;
+    }
+    &__btn {
+        width: 140px;
+        padding: 8px 0;
+        border-radius: 8px;
+
+        background-color: var(--main-orange);
+        color: #fff;
+
+        transition: transform 250ms ease,
+                    border 250ms ease;
+
+        &-curr {
+            border: none;
+            color: #000;
+        }
+        &:hover {
+            border: 2px solid #000;
+            transform: scale(105%);
+            cursor: pointer;
+        }
     }
     &__info {
         display: flex;
@@ -179,4 +208,9 @@ main {
     position: absolute;
     top: 20px;
     right: 20px;
+    width: 28px;
+    height: 28px;
+    &:hover {
+        cursor: pointer;
+    }
 }
