@@ -16,8 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !($_POST["watched"] || $_POST["queue
     if (isset($_POST["pagination"])) $_SESSION["page"] = $_POST["pagination"];
 }
 
-require "php/mysql/mysql-save.php"
-
 ?>
 
 <!DOCTYPE html>
@@ -40,3 +38,7 @@ require "php/mysql/mysql-save.php"
 </body>
 <script src="./php/modal.js"></script>
 </html>
+
+<?php
+    require "php/mysql/mysql-save.php"
+?>

@@ -9,8 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["movieList"]) {
     $_SESSION["page"] = 1;
 }
 
-require "../php/mysql/mysql-save.php";
-
 if ($_SESSION["movieList"] == "queuedMovies") $sql = "SELECT * FROM `movies` WHERE movie_watched = 0 AND (movie_film = 'popularMovies' OR movie_film = 'topRatedMovies');";
 if ($_SESSION["movieList"] == "watchedMovies") $sql = "SELECT * FROM `movies` WHERE movie_watched = 1 AND (movie_film = 'popularMovies' OR movie_film = 'topRatedMovies');";
 if ($_SESSION["movieList"] == "queuedTVs") $sql = "SELECT * FROM `movies` WHERE movie_watched = 0 AND (movie_film = 'popularTVs' OR movie_film = 'topRatedTVs');";
@@ -61,3 +59,7 @@ try {
 </body>
 <script src="../php/modal.js"></script>
 </html>
+
+<?php
+    require "php/mysql/mysql-save.php"
+?>
