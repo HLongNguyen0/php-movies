@@ -11,15 +11,13 @@ $client = new Client();
 
 $data = json_decode(ServerRequest::fromGlobals()->getBody(), true);
 
-if ($data["movieList"] == "popularTVs" 
-|| $data["movieList"] == "topRatedTVs"
-|| $data["movieList"] == "queuedTVs"
-|| $data["movieList"] == "watchedTVs"
-) {
-  $film = "tv";
-} else {
-  $film = "movie";
-}
+$tvList = ["popularTVs", "topRatedTVs", "queuedTVs", "watchedTVs"];
+$indexList = ["popularMovies", "popularTVs", "topRatedMovies", "topRatedTVs", "upcoming"];
+
+if (in_array($data["movieList"], $tvList)) $film = "tv";
+else $film = "movie";
+if (in_array($data["movieList"], $indexList)) $postPath = "/src/index.php";
+else $postPath = "/src/layout/library.php";
 
 try {
   $response = $client->request('GET',
@@ -84,7 +82,7 @@ echo "
 ";
 
 echo "
-  <form class='modal__form' method='POST' action='/src/index.php'>
+  <form class='modal__form' method='POST' action=" . $postPath . ">
 ";
 
 if ($movies['movie_watched'] === '1') {

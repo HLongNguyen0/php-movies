@@ -2,8 +2,8 @@
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && ($_POST["watched"] || $_POST["queue"])) {
-    require_once "mysql.php";
-    
+    if ($currPage == 'index') require_once "php/mysql/mysql.php";
+    else require_once "../php/mysql/mysql.php";
     if ($_POST["watched"]) {
         $cardId = $_POST["watched"];
         $watched = 1;
@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && ($_POST["watched"] || $_POST["queue"
     }
 
     $sql = "SELECT movie_watched FROM movies WHERE id = $cardId;";
-    var_dump($cardId);
     try {
         $movies = mysqli_fetch_assoc(mysqli_query($connect, $sql));
     } catch (\Throwable $th) {

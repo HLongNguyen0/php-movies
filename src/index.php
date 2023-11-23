@@ -3,7 +3,6 @@
 $currPage = 'index';
 require "php/session.php";
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !($_POST["watched"] || $_POST["queue"])) {
     if (isset($_POST["search"])) {
         $_SESSION["movieList"] = "search";
@@ -13,6 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !($_POST["watched"] || $_POST["queue
     $_SESSION["page"] = 1;
     if (isset($_POST["pagination"])) $_SESSION["page"] = $_POST["pagination"];
 }
+
+require "php/mysql/mysql-save.php"
 
 ?>
 
@@ -36,9 +37,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !($_POST["watched"] || $_POST["queue
 </body>
 <script src="./php/modal.js"></script>
 </html>
-
-<?php
-
-    require "php/mysql/mysql-save.php"
-
-?>

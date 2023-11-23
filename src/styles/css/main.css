@@ -79,8 +79,18 @@ header .header__search__input {
 header .header__nav__list {
   display: flex;
   justify-content: space-between;
-  width: 100px;
+  width: 120px;
   font-size: 16px;
+}
+header .header__nav__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 48px;
+}
+header .header__nav__link-curr {
+  border-bottom: 2px solid var(--main-orange);
 }
 
 main {

@@ -24,10 +24,16 @@
         <nav class="header__nav">
             <ul class="header__nav__list">
                 <li class="header__nav__elem">
-                    <a href="/src/index.php" class="header__nav__link">Home</a>
+                    <?php
+                    if ($currPage == 'index') echo "<a class='header__nav__link header__nav__link-curr' href='/src/index.php'>Home</a>";
+                    else echo "<a class='header__nav__link' href='/src/index.php'>Home</a>";
+                    ?>
                 </li>
                 <li class="header__nav__elem">
-                    <a href="/src/layout/library.php" class="header__nav__link">Library</a>
+                    <?php
+                    if ($currPage == 'index') echo "<a class='header__nav__link' href='/src/layout/library.php' >Library</a>";
+                    else echo "<a class='header__nav__link header__nav__link-curr' href='/src/layout/library.php'>Library</a>";
+                    ?>
                 </li>
             </ul>
         </nav>
