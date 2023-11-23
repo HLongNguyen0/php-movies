@@ -5,8 +5,6 @@ main {
     &__list {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-
         margin: -16px -10px;
         
     }
@@ -56,23 +54,16 @@ main {
     }
 }
 .sort {
-    width: 1120px;
     height: 80px;
-    margin: 0 auto;
     &__list {
         display: flex;
-        justify-content: space-between;
-        
-        width: 10%5;
+        width: fit-content;
+        margin: 0 auto;
     }
     &__elem {
         text-align: center;
-
-        
-        :hover {
-            border: 2px solid #000;
-            transform: scale(105%);
-            cursor: pointer;
+        &:not(:last-child) {
+            margin-right: 30px;
         }
     }
     &__button {
@@ -89,6 +80,11 @@ main {
 
         &-curr {
             color: #000;
+        }
+        &:hover {
+            border: 2px solid #000;
+            transform: scale(105%);
+            cursor: pointer;
         }
     }
 }

@@ -90,7 +90,6 @@ main {
 .movies__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin: -16px -10px;
 }
 .movies__card {
@@ -131,22 +130,19 @@ main {
 }
 
 .sort {
-  width: 1120px;
   height: 80px;
-  margin: 0 auto;
 }
 .sort__list {
   display: flex;
-  justify-content: space-between;
-  width: 10% 5;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
 }
 .sort__elem {
   text-align: center;
 }
-.sort__elem :hover {
-  border: 2px solid #000;
-  transform: scale(105%);
-  cursor: pointer;
+.sort__elem:not(:last-child) {
+  margin-right: 30px;
 }
 .sort__button {
   width: 200px;
@@ -159,6 +155,11 @@ main {
 }
 .sort__button-curr {
   color: #000;
+}
+.sort__button:hover {
+  border: 2px solid #000;
+  transform: scale(105%);
+  cursor: pointer;
 }
 
 .pagination {

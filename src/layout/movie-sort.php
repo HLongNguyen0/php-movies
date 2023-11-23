@@ -1,12 +1,21 @@
 <?php
 
-$sortArr = [
-    "popularMovies" => "Popular Movies",
-    "popularTVs" => "Popular TVShows",
-    "topRatedMovies" => "Top rated Movies",
-    "topRatedTVs" => "Top rated TVShows",
-    "upcoming" => "Upcoming"
-];
+if ($currPage == 'index') {
+    $sortArr = [
+        "popularMovies" => "Popular Movies",
+        "popularTVs" => "Popular TVShows",
+        "topRatedMovies" => "Top rated Movies",
+        "topRatedTVs" => "Top rated TVShows",
+        "upcoming" => "Upcoming"
+    ];
+} else {
+    $sortArr = [
+        "queuedMovies" => "My Movies",
+        "watchedMovies" => "Watched Movies",
+        "queuedTVs" => "My TVShows",
+        "watchedTVs" => "Watched TVShows"
+    ];
+}
 ?>
 
 <form class="sort" method="POST" action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>">

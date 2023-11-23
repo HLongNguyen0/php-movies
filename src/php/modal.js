@@ -1,19 +1,22 @@
 const refs = {
-    movieCard: document.querySelector('.movies__list'),
+    movieList: document.querySelector('.movies__list'),
     modal: document.querySelector('.modal'),
     modalWindow: document.querySelector('.modal__window'),
     body: document.querySelector('body')
 }
 
-refs.movieCard.addEventListener('click', openModal);
+refs.movieList.addEventListener('click', openModal);
 
 function openModal(e) {
+    if (!e.target.dataset.id) {
+        return;
+    }
     refs.modalWindow.innerHTML = "";
     refs.modal.classList.add('openModal');
     refs.body.style.overflow='hidden';
 
     r = new XMLHttpRequest();
-    r.open("POST", "php/api/api-modal.php");
+    r.open("POST", "/src/php/api/api-modal.php");
     r.setRequestHeader("Content-Type", "application/json");
     
     params = {
@@ -31,5 +34,4 @@ function openModal(e) {
 function closeModal() {
     refs.modal.classList.remove('openModal');
     refs.body.style.overflow='visible';
-
 }
