@@ -1,5 +1,8 @@
 <?php
 
+// Add password in /src/php/mysql/mysql.php
+// Add data base key in /src/php/api/keys.php
+
 $currPage = 'index';
 require "php/session.php";
 

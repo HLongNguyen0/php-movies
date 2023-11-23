@@ -1,7 +1,7 @@
 <?php
 $db_server = "localhost";
 $db_user = "root";
-$db_password = "LeoNg_311299";
+$db_password = "";
 $db_name = "movies_db";
 $connect = "";
 
