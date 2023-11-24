@@ -3,6 +3,8 @@
 $currPage = "library";
 require "../php/session.php";
 require "../php/mysql/mysql.php";
+require "../php/mysql/mysql-save.php";
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["movieList"]) {
     if (isset($_POST["movieList"])) $_SESSION["movieList"] = $_POST["movieList"];
@@ -20,6 +22,7 @@ try {
     echo "Coundn't fetch <br>";
     echo $th;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -61,5 +64,4 @@ try {
 </html>
 
 <?php
-    require "php/mysql/mysql-save.php"
 ?>
